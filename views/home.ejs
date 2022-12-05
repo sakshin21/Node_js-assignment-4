@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <%- include('./partials/header.ejs'); %>
+  </head>
+  <body>
+    <div class="container">
+    <div class="row">  
+        <% for(let i=0;i<data.length;i++){%>
+          <div class="col-md-4"><br><br>
+            <div class="card text-center" style="width:23rem;  border-style:solid;
+             border-width:medium; border-color:black;">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlJQU_aYJndPjxEEgvgPlY91GNrdBW5NTWig&usqp=CAU" class="card-img-top">
+              <div class="card-body">
+                <h3 class="card-title"><%=data[i].name%></h3>
+                <h6 class="card-text"><%=data[i].price%></h6>
+                <h6 class="card-text"><%=data[i].quantity%></h6>
+                <h6 class="card-text"><%=data[i].description%></h6>
+                <br>
+                <div class="btn-group">
+                  <a href="editproduct/<%=data[i]._id%>" class="btn btn-success btn-lg">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="deleteproduct/<%=data[i]._id%>" class="btn btn-danger btn-lg">Delete</a>
+                  <br>
+                </div>
+                <br>
+              </div>
+            </div>
+          </div>
+        <%}%>
+    </div>
+    </div> 
+  </body>
+</html>
